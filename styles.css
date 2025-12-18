@@ -1,0 +1,173 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header - Using FLEX for centering */
+header {
+    background-color: #8B4513;
+    color: #fff;
+    padding: 2rem;
+    /* FLEX centering - centers content both horizontally and vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+    border-bottom: 4px solid #654321;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Main Content Area - Using FLEX for layout */
+main {
+    max-width: 1400px;
+    /* FLEX with margin auto centers the container horizontally */
+    margin: 0 auto;
+    padding: 2rem;
+    /* FLEX for vertical stacking of sections */
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Content Sections - Using FLEX */
+.content-section {
+    background-color: #fff;
+    padding: 2rem;
+    border: 2px dashed #999;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* FLEX to center the image container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Products Row - FLEX for side-by-side layout */
+.products-row {
+    /* FLEX with space-between for equal distribution */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.products-row .image-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Image Container - Using DISPLAY: block and margin for centering */
+.image-container {
+    /* DISPLAY block allows margin auto to work for horizontal centering */
+    display: block;
+    text-align: center;
+    max-width: 100%;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    /* DISPLAY block with margin auto centers the image */
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+.image-container figcaption {
+    font-size: 1rem;
+    color: #666;
+    font-weight: bold;
+    padding: 0.5rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    /* DISPLAY inline-block with text-align for centering text */
+    display: inline-block;
+}
+
+/* Footer - Using POSITION for centering text */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    /* POSITION relative creates positioning context */
+    position: relative;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+    /* POSITION with transform for precise centering (alternative method) */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    main {
+        padding: 1rem;
+        gap: 2rem;
+    }
+    
+    .content-section {
+        padding: 1rem;
+    }
+    
+    /* Stack products vertically on mobile */
+    .products-row {
+        flex-direction: column;
+    }
+    
+    .products-row .image-container {
+        min-width: 100%;
+    }
+}
+
+/* Additional centering examples for reference */
+.centered-with-flex {
+    /* Method 1: FLEX - Most modern and versatile */
+    display: flex;
+    justify-content: center;  /* horizontal centering */
+    align-items: center;      /* vertical centering */
+}
+
+.centered-with-position {
+    /* Method 2: POSITION - Absolute centering */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centered-with-margin {
+    /* Method 3: DISPLAY block with margin - Classic horizontal centering */
+    display: block;
+    margin: 0 auto;
+}
